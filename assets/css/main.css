@@ -117,7 +117,7 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #646464;
+		color: #4D4D4F;
 		font-family: "Inter", Inter, Raleway, sans-serif;
 		font-size: 11pt;
 		font-weight: 300;
@@ -3610,6 +3610,7 @@ input, select, textarea {
 			}
 
 		}
+
 
 
 
