@@ -1,0 +1,279 @@
+
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>https://github.com/wintersun-01/winter/blob/main/bushfire-seasons.html
+		<title>Bushfire Seasons</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Home</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li>
+							</>
+						</nav>
+						<nav class="main">
+							<>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								< class="links">
+									<li>
+										<a href="#">
+											<h3>Lorem ipsum</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Dolor sit amet</h3>
+											<p>Sed vitae justo condimentum</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Feugiat veroeros</h3>
+											<p>Phasellus sed tricies mi congue</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<h3>Etiam sed consequat</h3>
+											<p>Porta lectus amet tricies</p>
+										</a>
+									</li>
+								</>
+							</section>
+
+						<!-- Actions -->
+							<section>
+								< class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Fire Seasons in Australia</a></h2>
+										<p>Bushfire seasons vary across Australian states.</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-11-01">November 1, 2015</time>
+										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+								<ul style="padding-left:2.5em;">
+									<li>Bushfire season variations across states are due to climate zones, rainfall patterns and when vegetation (grass, scrub and forests) dry out enough to burn.</li>
+									<li>Fire authorities in each state determine the bushfire season each year for that state. </li>
+									<li style="color:orange;">Select states to view bushfire seasons.</li>
+								</ul>
+								<iframe title="bushfires_seasons_v1.0" width="1100" height="780" src="https://app.powerbi.com/view?r=eyJrIjoiZjRiZTEwNTctOTc3MC00NWU3LTk2MzQtMWM1MTdmYWY2YjI3IiwidCI6ImQ2YzIyOGU5LTQ3NTItNDJjNy1hNzlmLTA3OGVhMGMzMmRiMCJ9" frameborder="0" allowFullScreen="true"></iframe>
+								<ul style="padding-left:2.5em;">
+									<li>Southern states peak in summer (Dec-Feb)</li>
+									<li>Northern and tropical areas peak earlier. (May-Oct).</li>
+								</ul>	
+								<title>Australian Fire Seasons 2026</title>
+								<style>
+								    table { border-collapse: collapse; width: 100%; table-layout: auto; }
+								    th, td { border: 3px solid #CA762B; padding: 8px; text-align: left; }
+								    th { background-color: #f2f2f2; }
+								  </style>
+								<table>
+								  <thead>
+								    <tr>
+								      <th>State/Territory</th>
+								      <th>Typical Period</th>
+								      <th>Peak Months</th>
+								      <th>Notes</th>
+								      <th>Declaring Agency</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr>
+								      <td>New South Wales</td>
+								      <td>Oct-May</td>
+								      <td>Dec-Mar</td>
+								      <td>SE region (Sydney) declared Dec 1; NW varies by LGA</td>
+								      <td>NSW Rural Fire Service (RFS)</td>
+								    </tr>
+								    <tr>
+								      <td>Victoria</td>
+								      <td>Dec-Mar</td>
+								      <td>Jan-Feb</td>
+								      <td>CFA declares district-by-district; Peak in Melbourne summer</td>
+								      <td>Country Fire Authority (CFA)</td>
+								    </tr>
+								    <tr>
+								      <td>Queensland</td>
+								      <td>May-Oct</td>
+								      <td>Jun-Sep</td>
+								      <td>Dry season; tropical north starts earlier</td>
+								      <td>Queensland Fire Department (QFD)</td>
+								    </tr>
+								    <tr>
+								      <td>South Australia</td>
+								      <td>Nov-Apr</td>
+								      <td>Dec-Feb</td>
+								      <td>CFS publishes exact dates per district annuallys</td>
+								      <td>Country Fire Service (CFS)</td>
+								    </tr>
+								    <tr>
+								      <td>Western Australia</td>
+								      <td>Oct-Apr</td>
+								      <td>Dec-Feb</td>
+								      <td>South-west declared; Pilbara/North varies</td>
+								      <td>Department of Fire and Emergency Services (DFES)</td>
+								    </tr>
+								    <tr>
+								      <td>Tasmania</td>
+								      <td>Dec-Mar</td>
+								      <td>Jan-Feb</td>
+								      <td>TFS declares Total Fire Ban Districts</td>
+								      <td>Tasmania Fire Service (TFS)</td>
+								    </tr>
+								    <tr>
+								      <td>Northern Territory</td>
+								      <td>May-Nov</td>
+								      <td>Jun-Oct</td>
+								      <td>Build-up season before wet monsoon </td>
+								      <td>NT Fire & Rescue Service</td>
+								    </tr>
+								    <tr>
+								      <td>ACT</td>
+								      <td>Oct-Mar</td>
+								      <td>Dec-Feb</td>
+								      <td>Bush Capital, similar to NSW and Victoria.</td>
+								      <td>ACT Emergency Services Agency (ESA) </td>
+								    </tr>
+								  </tbody>
+								</table>	
+								<script>
+								  // Add current date (Melbourne time)
+								  document.write('<p style="margin-top:20px;"><strong>Today:</strong> ' + 
+								    new Date().toLocaleDateString('en-AU') + '</p>');
+								</script>
+								<footer>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon solid fa-rss"><span class="label">RSS</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
