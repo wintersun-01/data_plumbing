@@ -198,17 +198,17 @@
 									</details>
 
 
-								<script>   	
-									async function showCode(targetId, filePath) {
-  									const codeEl = document.getElementById(targetId);
-  									const pre = codeEl.parentElement;
-  
- 									if (codeEl.dataset.loaded === "true") {
+									<script>   
+										async function showCode(targetId, filePath) {
+  										const codeEl = document.getElementById(targetId);
+  										const pre = codeEl.parentElement;
+
+  									if (codeEl.dataset.loaded === "true") {
     								pre.style.display = pre.style.display === "none" ? "block" : "none";
     								return;
   									}
-										
-	  							try {
+      
+  									try {
     								const resp = await fetch(filePath);
     								const text = await resp.text();
     								codeEl.textContent = text;
@@ -217,9 +217,9 @@
     								codeEl.dataset.loaded = "true";
  									 } catch (e) {
     								codeEl.textContent = "Error: " + e.message;
-  										}
+  											}
 									}
-                                   </script>	
+									</script>
 
 									
 								<footer>
