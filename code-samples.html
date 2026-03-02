@@ -100,16 +100,16 @@
 								<header>
 									<div class="title">
 										<h2><a href="#">Code </a></h2>
-									    <p>A few extracts from actual projects!</p>
+									    <p>Some extracts from projects.</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2026-02-02">February 2, 2026</time>
+										<time class="published" datetime="2026-03-02">March 2, 2026</time>
 										<a href="#" class="author"><span class="name">Allie Rhodes</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>
-								<--<span class="image featured"><img src="images/pic09.jpg" alt="" /></span>
+								<!--<span class="image featured"><img src="images/pic09.jpg" alt="" /></span>
 								<p>source:<a href="https://www.salvationarmy.org.au/rsds/news/2020/07/09/from-bushfire-assist-to-covid-19-assist/"www.salvationarmy.org.</p>
-								<!--<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p>-->
+								<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condientum viverra. </p>-->
 								<footer>
 									<ul class="stats">
 										<li><a href="#">General</a></li>
@@ -118,9 +118,92 @@
 									</ul>
 								</footer>
 							</article>
-
 					</div>
 
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a>SQL</a></h2>
+										<p>A sql script for...</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2026-03-02">March 02, 2026</time>
+										<a href="#" class="author"><span class="name">Allie Rhodes</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+							 	
+								<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span>  
+								<!--<iframe title="bushfires_history_v0.1pbix" width="1100" height="780" src="https://app.powerbi.com/view?r=eyJrIjoiZTdmZjRjNjktNzY4Ni00OTA3LTlmMTYtMDBhMDkxOGVhNTg4IiwidCI6ImQ2YzIyOGU5LTQ3NTItNDJjNy1hNzlmLTA3OGVhMGMzMmRiMCJ9" frameborder="0" allowFullScreen="true"></iframe>-->
+								
+								<details onclick="loadOnce(event, 'code-sql', 'scripts/query1.sql')">
+  									<summary>Show SQL script</summary>
+  									<pre id="code-sql"></pre>
+								</details>
+
+								
+								<script>   	<!-- js -->
+									async function loadOnce(e, targetId, filePath) {
+  										const pre = document.getElementById(targetId);
+  											if (pre.dataset.loaded === "true") return;  // only fetch first time
+								
+									try {
+    									const resp = await fetch(filePath);
+    									if (!resp.ok) throw new Error(resp.statusText);
+    										pre.textContent = await resp.text();
+    											pre.dataset.loaded = "true";
+ 												} catch (err) {
+    											pre.textContent = "Error loading file: " + err.message;
+ 															 }
+												}
+                                   </script>	
+				
+														
+								
+								
+								
+								<footer>
+									<!--<ul class="actions">
+										<li><a href="single.html" class="button large">tbc.</a></li>
+									</ul> -->
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="bushfire-seasons.html">Australian Bush fire Seasons</a></h2>
+										<p>Subclimates and bush fire seasons</p>   
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2026-01-15">January 15, 2026</time>
+										<a href="#" class="author"><span class="name">Allie Rhodes</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+								<iframe title="bushfires_seasons_v1.0" width="1100" height="780" src="https://app.powerbi.com/view?r=eyJrIjoiZjRiZTEwNTctOTc3MC00NWU3LTk2MzQtMWM1MTdmYWY2YjI3IiwidCI6ImQ2YzIyOGU5LTQ3NTItNDJjNy1hNzlmLTA3OGVhMGMzMmRiMCJ9" frameborder="0" allowFullScreen="true"></iframe>
+				
+							<!--<a href="bushfire-seasons.html" class="image featured"><img src="images/pic03.jpg" alt=""/></a> -->
+							<!-- <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Cras vehicula tellus eu ligula viverra, ac fringilla turpis suscipit. Quisque vestibulum rhoncus ligula.</p> -->
+								<footer>
+									<!--<ul class="actions">
+										<li><a href="single.html" class="button large">Continue Reading</a></li>
+									</ul> -->
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+
+
+									
 				<!-- Footer -->
 					<section id="footer">
 						<ul class="icons">
