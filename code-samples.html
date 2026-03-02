@@ -131,20 +131,15 @@
 										<a href="#" class="author"><span class="name">Allie Rhodes</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>
-							 	 <style>
-    								.code-block {
-     									 max-width: 100%;
-      									flex-shrink: 1;
-										}
-					            </style>
 								<!--<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span>  -->
-								<!--<iframe title="bushfires_history_v0.1pbix" width="1100" height="780" src="https://app.powerbi.com/view?r=eyJrIjoiZTdmZjRjNjktNzY4Ni00OTA3LTlmMTYtMDBhMDkxOGVhNTg4IiwidCI6ImQ2YzIyOGU5LTQ3NTItNDJjNy1hNzlmLTA3OGVhMGMzMmRiMCJ9" frameborder="0" allowFullScreen="true"></iframe>-->
+								<pre id="sql1" style="display:none;"></pre>
 								
 								<details onclick="loadOnce(event, 'code-sql', 'code_samples/sql1.sql')">
   									<summary><h4> Show SQL script</h4></summary>
   									<pre id="code-sql"></pre>
 								</details>
-								
+
+									
 								<script>   	<!-- js -->
 									async function loadOnce(e, targetId, filePath) {
   										const pre = document.getElementById(targetId);
@@ -187,39 +182,46 @@
 									</div>
 								</header>
 							 	<!--<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span> --> 
- 						 	<style>
-								.code-block {
-								max-width: 100%;
-								flex-shrink: 1;
-								min-width: 0;
-								overflow-x: auto;
-								white-space: pre;
-								background: #f5f5f5;
-								padding: 8px;
-								border-radius: 4px;
-								box-sizing: border-box;
-								}
-							</style>
-								<details onclick="loadOnce(event, 'code-sql', 'code_samples/sql1.sql')">
-  									<summary><h4> Show SQL script</h4></summary>
-  									<pre id="code-sql">
-									</pre>
+
+								
+								
+								<-- Prism File -->
+								<link rel="stylesheet" href="assets/js/prism.css">
+								<script src="assets/js/prism.js"></script>
+					           
+								<style>
+									.code-block { max-width: 100%; flex-shrink: 1; min-width: 0; overflow-x: auto; padding: 8px; border-radius: 4px; box-sizing: border-box;}
+								</style>
+
+								<-- SQL	File -->
+								<details>
+									 <summary>Show SQL</summary>
+									<a href="#" onclick="showCode('sql1', 'code_samples/sql1.sql'); return false;">
+  									</a>	
+									<pre id="sql1" class="code-block language-sql"><code id="sql1">;/code></pre>	
 								</details>
-								
-								<script>   	<!-- js -->
-									async function loadOnce(e, targetId, filePath) {
-  										const pre = document.getElementById(targetId);
-  											if (pre.dataset.loaded === "true") return;  // only fetch first time
-								
-									try {
-    									const resp = await fetch(filePath);
-    									if (!resp.ok) throw new Error(resp.statusText);
-    										pre.textContent = await resp.text();
-    											pre.dataset.loaded = "true";
- 												} catch (err) {
-    											pre.textContent = "Error loading file: " + err.message;
- 															 }
-												}
+
+								<script>   	
+									async function showCode(targetId, filePath) {
+  									const codeEl = document.getElementById(targetId);
+  									const pre = codeEl.parentElement;
+  
+ 									if (codeEl.dataset.loaded === "true") {
+    								pre.style.display = pre.style.display === "none" ? "block" : "none";
+    								return;
+  									}
+										
+	  							try {
+    								const resp = await fetch(filePath);
+    								const text = await resp.text();
+    								codeEl.textContent = text;
+    								Prism.highlightElement(codeEl);  
+    								pre.style.display = "block";
+    								codeEl.dataset.loaded = "true";
+ 									 } catch (e) {
+    								codeEl.textContent = "Error: " + e.message;
+  										}
+									}
                                    </script>	
 											
 								<footer>
