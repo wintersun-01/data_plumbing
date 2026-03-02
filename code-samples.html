@@ -131,29 +131,40 @@
 									</div>
 								</header>
 								<!--<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span>  -->
-								<pre id="sql1" style="display:none;"></pre>
-								
-								<details onclick="loadOnce(event, 'code-sql', 'code_samples/sql1.sql')">
-  									<summary><h4> Show SQL script</h4></summary>
-  									<pre id="code-sql"></pre>
-								</details>
-
-									
-								<script>   	<!-- js -->
-									async function loadOnce(e, targetId, filePath) {
-  										const pre = document.getElementById(targetId);
-  											if (pre.dataset.loaded === "true") return;  // only fetch first time
-								
-									try {
-    									const resp = await fetch(filePath);
-    									if (!resp.ok) throw new Error(resp.statusText);
-    										pre.textContent = await resp.text();
-    											pre.dataset.loaded = "true";
- 												} catch (err) {
-    											pre.textContent = "Error loading file: " + err.message;
- 															 }
+								  <link rel="stylesheet" href="assets/js/prism.css">
+  									<script src="assets/js/prism.js"></script>
+  									<style> 
+					   				.code-block { max-width: 100%; flex-shrink: 1; min-width: 0; overflow-x: auto; padding: 8px; border-radius: 4px; box-sizing: border-box;
 												}
-                                   </script>	
+  									</style>
+ 
+									<details onclick="loadOnce(event, 'code-sql', 'code_samples/sql1.sql')">
+    								<summary><h4>Show SQL script</h4></summary>
+    								<pre class="code-block language-sql"><code id="code-sql"></code></pre>
+  									</details>
+								  <script>   
+ 									 async function loadOnce(e, targetId, filePath) {
+    								// Prevent details default toggle behavior
+    								e.preventDefault();
+   									e.stopPropagation();
+        
+									const codeEl = document.getElementById(targetId);
+    								const pre = codeEl.parentElement.parentElement; // <details>
+    
+    								if (codeEl.dataset.loaded === "true") return;  // only fetch first time
+
+    								try {
+      									const resp = await fetch(filePath);
+      										if (!resp.ok) throw new Error(resp.statusText);
+      									const text = await resp.text();
+      									codeEl.textContent = text;
+      									Prism.highlightElement(codeEl);  // ← ADD PRISM HIGHLIGHTING
+      									codeEl.dataset.loaded = "true";
+   									 } catch (err) {
+      										codeEl.textContent = "Error loading file: " + err.message;
+    										}
+  											}
+  									</script>
 											
 								<footer>
 									<!--<ul class="actions">
