@@ -133,7 +133,7 @@
 									</div>
 								</header>
 							 	
-								<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span>  
+								<!--<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span>  -->
 								<!--<iframe title="bushfires_history_v0.1pbix" width="1100" height="780" src="https://app.powerbi.com/view?r=eyJrIjoiZTdmZjRjNjktNzY4Ni00OTA3LTlmMTYtMDBhMDkxOGVhNTg4IiwidCI6ImQ2YzIyOGU5LTQ3NTItNDJjNy1hNzlmLTA3OGVhMGMzMmRiMCJ9" frameborder="0" allowFullScreen="true"></iframe>-->
 								
 								<details onclick="loadOnce(event, 'code-sql', 'code_samples/sql1.sql')">
@@ -183,21 +183,22 @@
 									</div>
 								</header>
 							 	<!--<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span> --> 
-																
+ 						 	<style>
+								.code-block {
+								max-width: 100%;
+								flex-shrink: 1;
+								min-width: 0;
+								overflow-x: auto;
+								white-space: pre;
+								background: #f5f5f5;
+								padding: 8px;
+								border-radius: 4px;
+								box-sizing: border-box;
+								}
+							</style>
 								<details onclick="loadOnce(event, 'code-sql', 'code_samples/sql1.sql')">
   									<summary><h4> Show SQL script</h4></summary>
   									<pre id="code-sql">
-										<style>
-  										.code-block {
-    									max-width: 100%;        /* never wider than its parent / viewport */
-    									box-sizing: border-box;
-    									overflow-x: auto;       /* horizontal scrollbar if code is long */
-    									white-space: pre;       /* keep formatting */
-    									background: #f5f5f5;
-    									padding: 8px;
-    									border-radius: 4px;
-  										}
-										</style>
 									</pre>
 								</details>
 								
