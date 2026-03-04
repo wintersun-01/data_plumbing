@@ -6,7 +6,6 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
 -- =============================================
 -- Author:		Allie Rhodes
 -- Create date: 24/08/2023
@@ -20,11 +19,8 @@ BEGIN
 			2. Delete from all tables, existing data updated in these new files.
 			3. Loop through each table importing from new and updated files.
 			4. Archives newly arrived files. 
-			5. Purge archive older than 7 days. 
-*/	
-					
-	
-	
+			5. Purge archive older than 7 days.  */	
+				
 /*Cloud case scripts that will be executed in AgentJob_CloudCaseETL*/
 			--Exec  [mkt].[CLC_ApplicationSummarySP]	 
 			--Exec  [mkt].[CLC_LoanSummarySP]
@@ -44,7 +40,6 @@ BEGIN
 			Drop table ##FilesToUse
 		End
 
-
 		Create table ##filesToUse
 				(ID int Identity
 				,NameOfFile varchar(100)
@@ -63,31 +58,30 @@ BEGIN
 /* 2.Delete values from all tables that will be updated today*/
 			--Select * from ##filesToUse f
 							
-			Delete mkt.CLC_AppSummary 
-			from mkt.CLC_AppSummary aps
+		Delete mkt.CLC_AppSummary 
+		from mkt.CLC_AppSummary aps
 			inner join 		##filesToUse f
 			on Left(f.NameOfFile,CharIndex('.',f.NameOfFile)-1) COLLATE DATABASE_DEFAULT =  aps.CaseID 
 
-			Delete mkt.CLC_LoanSummary
-			from mkt.CLC_LoanSummary ls
+		Delete mkt.CLC_LoanSummary
+		from mkt.CLC_LoanSummary ls
 			inner join 		##filesToUse f
 			on Left(f.NameOfFile,CharIndex('.',f.NameOfFile)-1) COLLATE DATABASE_DEFAULT =  ls.CaseID 
 				
-			Delete  mkt.CLC_LoanDetail 
-			From  mkt.CLC_LoanDetail ld
+		Delete  mkt.CLC_LoanDetail 
+		From  mkt.CLC_LoanDetail ld
 			inner join 		##filesToUse f
 			on Left(f.NameOfFile,CharIndex('.',f.NameOfFile)-1) COLLATE DATABASE_DEFAULT =  ld.CaseID 
 
-			Delete  mkt.CLC_Applicants  
-			From  mkt.CLC_Applicants a
+		Delete  mkt.CLC_Applicants  
+		From  mkt.CLC_Applicants a
 			inner join 		##filesToUse f
 			on Left(f.NameOfFile,CharIndex('.',f.NameOfFile)-1) COLLATE DATABASE_DEFAULT =  a.CaseID
 
-			Delete mkt.CLC_ActivityLog
-			From mkt.CLC_ActivityLog al
+		Delete mkt.CLC_ActivityLog
+		From mkt.CLC_ActivityLog al
 			inner join 	##filesToUse f
 			on Left(f.NameOfFile,CharIndex('.',f.NameOfFile)-1) COLLATE DATABASE_DEFAULT = al.CaseID COLLATE  DATABASE_DEFAULT
-
 
 
 /* Create working folder to be used by all scripts*/ 
@@ -102,14 +96,12 @@ BEGIN
 /*3. Agent job loops through tables updating from files*/ 
 		
 		Exec msdb.dbo.sp_start_job [AgentJob_CloudCase_ETL_]
-		
 	/*  
 		Exec  [mkt].[CLC_ApplicationSummarySP]	 
 		Exec  [mkt].[CLC_LoanSummarySP]
 		Exec  [mkt].[CLC_LoanDetailSP]
 		Exec  [mkt].[CLC_ApplicantSP]
-		Exec  [mkt].[CLC_ActivityLogSP]
-	*/	
+		Exec  [mkt].[CLC_ActivityLogSP]  */	
 
 
 /*Clean up */ 
@@ -131,50 +123,21 @@ BEGIN
 
 					 
 /*Move files to archive folder*/
-	  
-		Set @cmd0 				= 'move /Y \\ha-prd-RDB02\RBDEXSAM\CloudCaseFiles\*.xml \\ha-prd-RDB02\RBDEXSAM\CloudCaseFiles\Archive\'
+
+		Set @cmd0 							= 'move /Y \\ha-prd-RDB02\RBDEXSAM\CloudCaseFiles\*.xml \\ha-prd-RDB02\RBDEXSAM\CloudCaseFiles\Archive\'
 	    Exec master.dbo.xp_cmdshell @cmd0; 
 
 
 
 /*Purge 8th day prior archive folder*/
-	    Declare @date8 date	=  DateAdd(DAY,-8, GetDate( ))
-		Declare @folderName8 varchar(100)  =  FORMAT(@date8, 'ddMMMyyyy')
-		Set @cmd0 = 'rmdir '+ @path + @folderName8  + '/S ' + '/Q' 
+	    Declare @date8 date					=  DateAdd(DAY,-8, GetDate( ))
+		Declare @folderName8 varchar(100)  	=  FORMAT(@date8, 'ddMMMyyyy')
+		Set @cmd0 							= 'rmdir '+ @path + @folderName8  + '/S ' + '/Q' 
 		Exec master.dbo.xp_cmdshell @cmd0
 
 
-Exec msdb.dbo.sp_stop_job  [AgentJob_CloudCase_ETL_] 
-
+/*Stop_job*/
+		Exec msdb.dbo.sp_stop_job  [AgentJob_CloudCase_ETL_] 
 
 END 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-Testing only.
-
-/*Set @cmd0 			= 'move /Y \\ha-prd-RDB02\RBDEXSAM\CloudCaseFiles\*.xml \\ha-prd-RDB02\RBDEXSAM\CloudCaseFiles\Archive\'
-Exec master.dbo.xp_cmdshell @cmd0; */
-
-/*Set @cmd 				= ' ren \\ha-prd-rdb02\RBDEXSAM\CloudCaseFiles\WorkingFiles_AppSummary\123.xml  1.xml'
-Exec master.dbo.xp_cmdshell @Cmd; 
-*/
-/*Declare @path0 varchar (500)	
-Set @path 				=  '\\ha-prd-RDB02\RBDEXSAM\CloudCaseFiles\'
-Set @cmd0 				= 'move /Y' + @path  +'*.xml ' +  @path0 --+ @folderName0  */
-*/
-source dir: dest dir
-EXEC xp_cmdshell 
-'copy C:\NPE C:\backups';
-*/
